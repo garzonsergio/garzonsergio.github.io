@@ -1,0 +1,7 @@
+header{
+    justify-content: space-between;
+}
+.item-bar{
+    visibility: visible;
+    margin: 2rem;
+}
