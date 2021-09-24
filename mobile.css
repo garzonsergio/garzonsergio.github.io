@@ -7,51 +7,13 @@
 html {
     font-size: 62.5%;
     font-family: 'Yantramanav', serif;
+
 /* CSS HEX */
 --onyx: #393e41ff;
 --timberwolf: #d3d0cbff;
 --platinum: #e7e5dfff;
 --keppel: #44bba4ff;
 --maize-crayola: #e7bb41ff;
-
-/* CSS HSL */
---onyx: hsla(203, 7%, 24%, 1);
---timberwolf: hsla(38, 8%, 81%, 1);
---platinum: hsla(45, 14%, 89%, 1);
---keppel: hsla(168, 47%, 50%, 1);
---maize-crayola: hsla(44, 78%, 58%, 1);
-
-/* SCSS HEX */
-$onyx: #393e41ff;
-$timberwolf: #d3d0cbff;
-$platinum: #e7e5dfff;
-$keppel: #44bba4ff;
-$maize-crayola: #e7bb41ff;
-
-/* SCSS HSL */
-$onyx: hsla(203, 7%, 24%, 1);
-$timberwolf: hsla(38, 8%, 81%, 1);
-$platinum: hsla(45, 14%, 89%, 1);
-$keppel: hsla(168, 47%, 50%, 1);
-$maize-crayola: hsla(44, 78%, 58%, 1);
-
-/* SCSS RGB */
-$onyx: rgba(57, 62, 65, 1);
-$timberwolf: rgba(211, 208, 203, 1);
-$platinum: rgba(231, 229, 223, 1);
-$keppel: rgba(68, 187, 164, 1);
-$maize-crayola: rgba(231, 187, 65, 1);
-
-/* SCSS Gradient */
-$gradient-top: linear-gradient(0deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-right: linear-gradient(90deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-bottom: linear-gradient(180deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-left: linear-gradient(270deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-top-right: linear-gradient(45deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-bottom-right: linear-gradient(135deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-top-left: linear-gradient(225deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-bottom-left: linear-gradient(315deg, #393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
-$gradient-radial: radial-gradient(#393e41ff, #d3d0cbff, #e7e5dfff, #44bba4ff, #e7bb41ff);
 
 }
 
@@ -134,7 +96,7 @@ figure{
     right:0;
     margin: auto;
     
-    animation: goUp 1.5s ease-in-out 20ms forwards;
+    animation: goUp 2s ease-in-out 20ms forwards;
 
 }
 
@@ -152,17 +114,23 @@ figure{
     height: 7em;
     border-radius: 100%;
     
-    animation: turnOn 1.5s ease-in-out 20ms forwards;
+    animation: turnOn 4s ease-in-out 20ms forwards;
 }
 
 @keyframes turnOn {
     0%{
 
     }
-    100%{
+    50%{
         background: var(--maize-crayola);
         opacity: 1;
         box-shadow: 0 0 20rem 12rem var(--maize-crayola);
+        transform: translateY(-8rem);
+    }
+    100%{
+        background: var(--maize-crayola);
+        opacity: 1;
+        box-shadow: 0 0 20rem 6rem var(--maize-crayola);
         transform: translateY(-8rem);
     }
 }
@@ -204,7 +172,7 @@ figure{
     transform: rotateX(45deg);
     transform-style: preserve-3d;
 
-    animation: phoneCome 3s ease-in-out 20ms forwards;
+    animation: phoneCome 6s ease-in-out 20ms forwards;
 }
 
 @keyframes phoneCome {
@@ -244,6 +212,7 @@ figure{
     
     font-size: 3rem;
     color: var(--keppel);
+    font-family: Andika, sans-serif;
     text-shadow: 1px 1px 2px black;
     
 }
