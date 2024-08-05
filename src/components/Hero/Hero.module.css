@@ -153,7 +153,6 @@
 
 .screenCarousel div {
   height: 100%;
- 
 }
 
 .screenSlide {
@@ -166,9 +165,10 @@
 
 /* Custom styles for Ant Design Carousel arrows */
 .screenCarousel .slick-prev,
-.screenCarousel .slick-arrow .slick-next {
+.screenCarousel .slick-arrow {
   color: var(--keppel);
 }
+
 .notch {
   position: absolute;
   top: 0.8rem;
