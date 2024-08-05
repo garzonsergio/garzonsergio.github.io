@@ -1,5 +1,6 @@
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
   display: flex;
   flex-wrap: nowrap;
   width: 100vw;
@@ -41,7 +42,7 @@
     justify-content: space-between;
   }
 
-  .item{
+  .item {
     visibility: visible;
     margin: 2rem;
   }

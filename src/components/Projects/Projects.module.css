@@ -1,0 +1,30 @@
+.projects {
+  align-items: center;
+  color: var(--onyx);
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  font-family: Work Sans, serif;
+  height: 85vh;
+  justify-content: flex-start;
+  margin: 15vh 1.5rem 0 1.5rem;
+  padding: 4rem 0;
+  position: relative;
+  text-align: center;
+
+}
+
+.projectsTitle {
+  font-size: 3rem;
+  color: var(--keppel);
+  font-family: Andika, sans-serif;
+  text-shadow: 1px 1px 2px black;
+}
+
+.projectsText {
+  font-size: 1.6rem;
+  margin-bottom: 10rem;
+  font-family: Yantramanav, sans-serif;
+  text-shadow: 0.5px 0.5px 1px black;
+  color: white;
+}

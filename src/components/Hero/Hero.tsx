@@ -1,6 +1,6 @@
 import styles from "./Hero.module.css"
 import { Carousel } from "antd"
-import { LinkedinFilled, GithubFilled, MailFilled, CaretLeftOutlined, CaretRightFilled, CaretRightOutlined } from "@ant-design/icons"
+import { LinkedinFilled, GithubFilled, MailFilled } from "@ant-design/icons"
 
 
 export function Hero() {
