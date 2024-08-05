@@ -1,0 +1,14 @@
+.hero{
+    align-items: center;
+    color: var(--onyx);
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    font-family: Work Sans, serif;
+    height: 85vh;
+    justify-content:flex-start;
+    margin: 0 1.5rem;
+    padding: 4rem 0;
+    position: relative;
+    text-align: center;
+}

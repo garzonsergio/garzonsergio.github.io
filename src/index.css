@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Yantramanav', serif;
+
+/* CSS HEX */
+--onyx: #393e41ff;
+--timberwolf: #d3d0cbff;
+--platinum: #e7e5dfff;
+--keppel: #44bba4ff;
+--maize-crayola: #e7bb41ff;
+
+}
+
+body {
+    /* background: linear-gradient(180deg, black 10%, rgb(98, 107, 112), var(--onyx)); */
+    background: black;
+}
