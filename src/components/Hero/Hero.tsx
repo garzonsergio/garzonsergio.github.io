@@ -1,4 +1,7 @@
 import styles from "./Hero.module.css"
+import { Carousel } from "antd"
+import { LinkedinFilled, GithubFilled, MailFilled } from "@ant-design/icons"
+import { Link } from "react-router-dom"
 
 export function Hero() {
     return (
@@ -19,7 +22,18 @@ export function Hero() {
             <div></div>
             <div className={styles.containerPhone}>
                 <div className={styles.screen}>
-                    
+                    <Carousel arrows className={styles.screenCarousel} infinite>
+                        <a className={styles.screenSlide} href="https://www.linkedin.com/in/scamilogarzon/" target="_blank" >
+                            <LinkedinFilled />
+                        </a>
+                        <a className={styles.screenSlide} href="https://github.com/garzonsergio" target="_blank">
+                            <GithubFilled />
+                        </a>
+                        <a className={styles.screenSlide} href="mailito:scgarzonp@gmail.com">
+                            <MailFilled />
+                        </a>
+
+                    </Carousel>
                 </div>
                 <div className={styles.notch}></div>
                 <div className={styles.keyboard}></div>

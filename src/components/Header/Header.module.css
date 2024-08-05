@@ -11,6 +11,8 @@
 .logo {
   position: absolute;
   max-height: 80%;
+  user-select: none;
+  pointer-events: none;
 }
 
 .figure {
