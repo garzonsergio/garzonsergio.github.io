@@ -130,7 +130,6 @@
   background-color: var(--maize-crayola);
   border: 5px solid var(--onyx);
   border-radius: 1rem;
-
   transform-style: preserve-3d;
 
   animation: phoneCome 6s ease-in-out 20ms forwards;
