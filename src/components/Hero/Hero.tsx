@@ -26,15 +26,21 @@ export function Hero() {
                         arrows
                         className={styles.screenCarousel}
                         infinite>
-                        <a className={styles.screenSlide} href="https://www.linkedin.com/in/scamilogarzon/" target="_blank" >
-                            <LinkedinFilled />
-                        </a>
-                        <a className={styles.screenSlide} href="https://github.com/garzonsergio" target="_blank">
-                            <GithubFilled />
-                        </a>
-                        <a className={styles.screenSlide} href="mailito:scgarzonp@gmail.com">
-                            <MailFilled />
-                        </a>
+                        <div className={styles.screenSlide}>
+                            <a href="https://www.linkedin.com/in/scamilogarzon/" target="_blank" >
+                                <LinkedinFilled />
+                            </a>
+                        </div>
+                        <div className={styles.screenSlide}>
+                            <a href="https://github.com/garzonsergio" target="_blank">
+                                <GithubFilled />
+                            </a>
+                        </div>
+                        <div className={styles.screenSlide}>
+                            <a href="mailito:scgarzonp@gmail.com">
+                                <MailFilled />
+                            </a>
+                        </div>
 
                     </Carousel>
                 </div>

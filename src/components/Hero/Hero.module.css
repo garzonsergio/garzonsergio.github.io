@@ -162,6 +162,14 @@
   width: min-content;
 }
 
+.screenSlide a {
+  color: var(--onyx);
+}
+
+.screenSlide a:hover {
+  color: var(--keppel);
+}
+
 /* Custom styles for Ant Design Carousel arrows */
 .screenCarousel .slick-prev,
 .screenCarousel .slick-arrow {
