@@ -5,7 +5,7 @@ import { LinkedinFilled, GithubFilled, MailFilled } from "@ant-design/icons"
 
 export function Hero() {
     return (
-        <section className={styles.hero}>
+        <section className={styles.hero} id="aboutme" >
             <h1 className={styles.heroTitle}>
                 {`Sergio Camilo Garzón`}
             </h1>

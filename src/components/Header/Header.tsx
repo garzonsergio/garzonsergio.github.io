@@ -10,11 +10,11 @@ export function Header() {
                     src="/scdev.png"
                 />
             </figure>
-            <ul className={styles.navbar}>
+            {/* <ul className={styles.navbar}>
                 <li className={styles.toggle}></li>
                 <li className={styles.item} id="work">Work</li>
                 <li className={styles.item} id="contact">Contact</li>
-            </ul>
+            </ul> */}
         </header>
     )
 }
