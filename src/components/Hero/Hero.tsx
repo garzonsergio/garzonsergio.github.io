@@ -1,9 +1,18 @@
 import styles from "./Hero.module.css"
 import { Carousel } from "antd"
-import { LinkedinFilled, GithubFilled, MailFilled } from "@ant-design/icons"
+import { LinkedinFilled, GithubFilled } from "@ant-design/icons"
 
 
 export function Hero() {
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = '/duckHunting.png';
+        document.body.appendChild(link);
+        link.target ="_blank";
+        link.click();
+        document.body.removeChild(link);
+    }
+
     return (
         <section className={styles.hero} id="aboutme" >
             <h1 className={styles.heroTitle}>
@@ -37,9 +46,9 @@ export function Hero() {
                             </a>
                         </div>
                         <div className={`${styles.screenSlide} ${styles.cv}`}>
-                            <a href="mailito:scgarzonp@gmail.com" >
+                            <span onClick={handleDownload} >
                                 CV
-                            </a>
+                            </span>
                         </div>
 
                     </Carousel>
