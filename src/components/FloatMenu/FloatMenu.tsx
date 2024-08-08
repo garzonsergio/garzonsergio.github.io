@@ -1,11 +1,11 @@
 import { CommentOutlined, PlusOutlined, BulbOutlined, UserOutlined } from '@ant-design/icons';
 import { FloatButton } from 'antd';
-
+import "./FloatMenu.css";
 export function FloatMenu() {
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            const headerHeight = window.innerHeight * 0.15 ; // Adjust this value on header's actual height
+            const headerHeight = window.innerHeight * 0.15; // Adjust this value on header's actual height
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - headerHeight;
 

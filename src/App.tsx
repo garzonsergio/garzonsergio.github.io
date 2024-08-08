@@ -18,7 +18,6 @@ function App() {
         <Hero />
         <Projects />
         <FloatMenu />
-
       </ConfigProvider >
     </>
   )

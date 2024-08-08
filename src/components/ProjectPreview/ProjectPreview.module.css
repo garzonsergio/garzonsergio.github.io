@@ -2,19 +2,53 @@
   position: relative;
   display: flex;
   background-color: var(--timberwolf);
-  width: calc(26.2rem * 1.2);
-  height: calc(15rem * 1.2);
+  width: 84%;
+  aspect-ratio: 1.75;
+  /* height: calc(15rem * 1.2); */
   border-radius: 0.8rem;
   border-top: 2rem solid var(--onyx);
   background-repeat: no-repeat;
-  /* background-position: top center; */
-  opacity: 0.6;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  color: var(--timberwolf);
+  animation: showTitle 1s ease-in-out 10ms backwards;
 }
-.container{
-    border: 1px dotted green;
+
+@keyframes showTitle {
+  0% {
+    color: transparent;
+    opacity: 1;
+  }
+  100% {
+    color: var(--timberwolf);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .navigator:hover {
-  opacity: 1;
+  color: transparent;
+  animation: fadeTitle 1s ease-in-out 10ms forwards;
+}
+
+@keyframes fadeTitle {
+  0% {
+    color: var(--rimberwolf);
+  }
+  100% {
+    color: transparent;
+    opacity: 1;
+  }
+}
+
+.navigator h3 {
+  font-size: 5rem;
+  -webkit-text-stroke: 2px var(--onyx);
 }
 
 .close,
@@ -40,11 +74,43 @@
   left: 3.5rem;
 }
 
-.info h3 {
-    font-size: 5rem;
+.info {
+  padding: 2rem 4rem 2rem 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 .info p {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
+  max-width: calc(26.2rem * 2);
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.buttonMore {
+  transition: transform 1s ease;
+}
+
+.buttonMore.show {
+  transform: rotate(45deg);
+}
+
+.description {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.description.show {
+  opacity: 1;
+  max-height: 200px; /* Adjust based on your content */
 }
 /* --onyx: #393e41ff;
   --timberwolf: #d3d0cbff;
@@ -53,7 +119,6 @@
   --maize-crayola: #e7bb41ff; */
 @media (min-width: 768px) {
   .container {
-    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
