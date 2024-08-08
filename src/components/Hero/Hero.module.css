@@ -156,7 +156,7 @@
 
 .screenSlide {
   display: flex;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   font-size: 8rem;
   color: var(--onyx);
   width: min-content;
@@ -164,8 +164,19 @@
 
 .screenSlide a {
   color: var(--onyx);
+  width: 20px;
+
 }
 
+.cv a{
+  border: 0.7rem solid var(--onyx);
+  border-radius: 1rem;
+  font-size: 5rem;
+  font-weight: 900;
+  padding: 1.2rem;
+  text-decoration: underline;
+  
+}
 .screenSlide a:hover {
   color: var(--keppel);
 }

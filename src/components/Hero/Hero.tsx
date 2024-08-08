@@ -36,9 +36,9 @@ export function Hero() {
                                 <GithubFilled />
                             </a>
                         </div>
-                        <div className={styles.screenSlide}>
-                            <a href="mailito:scgarzonp@gmail.com">
-                                <MailFilled />
+                        <div className={`${styles.screenSlide} ${styles.cv}`}>
+                            <a href="mailito:scgarzonp@gmail.com" >
+                                CV
                             </a>
                         </div>
 
