@@ -27,6 +27,8 @@ sketch
 
 # Local History for Visual Studio Code
 .history/
+dist
+build
 
 # Built Visual Studio Code Extensions
 *.vsix
