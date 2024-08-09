@@ -94,7 +94,7 @@
 }
 
 .buttonMore {
-  transition: transform 1s ease;
+  transition: transform 0.5s ease;
 }
 
 .buttonMore.show {

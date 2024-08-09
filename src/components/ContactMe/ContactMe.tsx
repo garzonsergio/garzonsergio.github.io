@@ -87,4 +87,4 @@ export function ContactMe() {
             </div>
         </section>
     );
-};
+}
