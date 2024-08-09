@@ -50,7 +50,7 @@ export function ProjectPreview({ style, imageUrl, backgroundSize = "100% 100%", 
                 </div>
                 <br />
 
-                <p className={`${styles.description} ${showDescription ? styles.show : ''}`}>{description}</p> : <></>
+                <p className={`${styles.description} ${showDescription ? styles.show : ''}`}>{description}</p> <></>
 
                 <br />
                 <div className={styles.buttons}>
@@ -60,7 +60,8 @@ export function ProjectPreview({ style, imageUrl, backgroundSize = "100% 100%", 
                         iconPosition="end"
                         href={href}
                         target="_blank"
-                        style={{ backgroundColor: `var(--maize-crayola)`, color: `var(--onyx)`, fontSize: "1.8rem" }}>
+                        style={{ textDecoration: 'none', color: `black`, fontWeight: 'bold' }}
+                    >
                         Visit Project
                     </Button>
                 </div>

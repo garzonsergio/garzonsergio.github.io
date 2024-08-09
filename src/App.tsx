@@ -12,7 +12,6 @@ function App() {
       <ConfigProvider theme={{
         token: {
           colorPrimary: "#44bba4ff",
-
         }
       }}>
         <Header />
