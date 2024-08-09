@@ -179,6 +179,11 @@
   cursor:pointer;
   
 }
+
+.cv a:hover{
+  border: 0.7rem solid var(--keppel);
+
+}
 .screenSlide a:hover {
   color: var(--keppel);
 }
