@@ -1,30 +1,21 @@
-import { useRef, FormEvent } from 'react';
+import { FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import { Form, Input, Button, message } from 'antd';
+import { Form, Input, Button } from 'antd';
+import { BulbOutlined } from '@ant-design/icons';
+import styles from './ContactMe.module.css';
+
 
 export function ContactMe() {
-    // const form = useRef<HTMLFormElement>(null);
     const [form] = Form.useForm();
 
-    const formRef = useRef<HTMLFormElement>(null);
     const { TextArea } = Input;
 
-    const temporarySubmit = (e: FormEvent) => {
-        e.preventDefault();
-        console.log(form.getFieldsValue());
-    }
+    const sendEmail = (_e: FormEvent) => {
+        //prevent default is not required in antd forms
+        const data = form.getFieldsValue();
 
-    const sendEmail = (e: FormEvent) => {
-        e.preventDefault();
-
-
-        const data = {
-            ...form.getFieldsValue()
-            // , user_id: `${import.meta.env.VITE_PUBLIC_ID}` 
-        }
-        console.log(data);
         emailjs
-            .send(`${import.meta.env.VITE_SERVICE_ID}`, `${import.meta.env.VITE_TEMPLATE_ID}`, data, `${import.meta.env.VITE_PUBLIC_ID}`)
+            .send(`${import.meta.env.VITE_SERVICE_I}`, `${import.meta.env.VITE_TEMPLATE_ID}`, data, `${import.meta.env.VITE_PUBLIC_ID}`)
             .then(
                 () => {
                     console.log('SUCCESS!');
@@ -37,43 +28,63 @@ export function ContactMe() {
     };
 
     return (
-        <section style={{ height: "85vh", border: "1px solid red" }} id="contactme">
-            <h1 style={{ color: "white" }}>Contact me</h1>
-            <Form
-                name="contact-me"
-                layout="vertical"
-                form={form}>
-                <Form.Item
-                    label="Name"
-                    name="user_name"
-                    rules={[{ required: true, message: 'Please input your name!' }]}>
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Company"
-                    name="user_company"
-                    rules={[{ required: true, message: 'Please input your company name!' }]}>
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Email"
-                    name="user_email"
-                    rules={[{ required: true, message: 'Please input your email!' }]}>
-                    <Input />
-                </Form.Item>
-                <Form.Item
-                    label="Message"
-                    name="message"
-                    rules={[{ required: true, message: 'Please input your message!' }]}>
-                    <TextArea />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" onClick={sendEmail}>
-                        Submit
-                    </Button>
-                </Form.Item>
+        <section className={styles.container} id="contactme">
+            <div>
+                <h1 style={{ color: `var(--keppel)` }}>Leave me a message <BulbOutlined /></h1>
+                <Form
+                    name="contact-me"
+                    layout="vertical"
+                    form={form}
+                    onFinish={sendEmail}>
+                    <Form.Item
+                        className={styles.formItem}
+                        label="Name"
+                        name="user_name"
+                        rules={[{ required: true, message: 'Please input your name!' }]}>
+                        <Input />
+                    </Form.Item>
+                    <Form.Item
+                        className={styles.formItem}
+                        label="Company"
+                        name="user_company"
+                        rules={[{ required: true, message: 'Please input your company name!' }]}>
+                        <Input />
+                    </Form.Item>
+                    <Form.Item
+                        className={styles.formItem}
+                        label="Email"
+                        name="user_email"
+                        rules={[
+                            { type: "email", message: "The input is not a valid E-mail" },
+                            { required: true, message: 'Please input your email!' },
+                        ]}>
+                        <Input />
+                    </Form.Item>
+                    <Form.Item
+                        className={styles.formItem}
+                        label="Phone"
+                        name="user_phone"
+                    >
+                        <Input />
+                    </Form.Item>
+                    <Form.Item
+                        className={styles.formItem}
+                        label="Message"
+                        name="message"
+                        rules={[{ required: true, message: 'Please input your message!' }]}>
+                        <TextArea rows={4} />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" >
+                            Submit
+                        </Button>
+                    </Form.Item>
 
-            </Form>
+                </Form>
+            </div>
+            <div className={styles.secondColumn}>
+                <img src="/scdev.png" alt="Sergio Camilo Garzón" />
+            </div>
         </section>
     );
 };
