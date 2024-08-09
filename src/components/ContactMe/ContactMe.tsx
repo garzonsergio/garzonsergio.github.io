@@ -75,7 +75,7 @@ export function ContactMe() {
                         <TextArea rows={4} />
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" >
+                        <Button type="primary" htmlType="submit" style={{ fontWeight: 'bold', color: 'black' }}>
                             Submit
                         </Button>
                     </Form.Item>
