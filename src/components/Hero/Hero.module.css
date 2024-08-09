@@ -169,7 +169,7 @@
 
 }
 
-.cv span{
+.cv a{
   border: 0.7rem solid var(--onyx);
   border-radius: 1rem;
   font-size: 5rem;

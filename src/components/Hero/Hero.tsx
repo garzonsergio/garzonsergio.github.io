@@ -4,14 +4,19 @@ import { LinkedinFilled, GithubFilled } from "@ant-design/icons"
 
 
 export function Hero() {
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = '/CV-SergioCamiloGarzon.pdf';
-        document.body.appendChild(link);
-        link.target ="_blank";
-        link.click();
-        document.body.removeChild(link);
-    }
+
+    //This function is to download the CV if you have it in the public folder
+    //If you want to use it, you have to import the function and call it in the span
+    //And you have to put the CV in the public folder
+    
+    // const handleDownload = () => {
+    //     const link = document.createElement('a');
+    //     link.href = '/CV-SergioCamiloGarzon.pdf';
+    //     document.body.appendChild(link);
+    //     link.target ="_blank";
+    //     link.click();
+    //     document.body.removeChild(link);
+    // }
 
     return (
         <section className={styles.hero} id="aboutme" >
@@ -45,10 +50,14 @@ export function Hero() {
                                 <GithubFilled />
                             </a>
                         </div>
+                        
                         <div className={`${styles.screenSlide} ${styles.cv}`}>
-                            <span onClick={handleDownload} >
+                        <a href="https://drive.google.com/file/d/10H25xrwVId3scEKDouQBRilkvp5XcdC0/view?usp=sharing" target="_blank">
                                 CV
-                            </span>
+                            </a>
+                            {/* <span onClick={handleDownload} >
+                                CV
+                            </span> */}
                         </div>
 
                     </Carousel>
