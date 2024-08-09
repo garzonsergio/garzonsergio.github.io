@@ -1,12 +1,15 @@
 import { useRef, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, message } from 'antd';
 
 export function ContactMe() {
     // const form = useRef<HTMLFormElement>(null);
     const [form] = Form.useForm();
 
-    const temporarySubmit = (e:FormEvent)=>{
+    const formRef = useRef<HTMLFormElement>(null);
+    const { TextArea } = Input;
+
+    const temporarySubmit = (e: FormEvent) => {
         e.preventDefault();
         console.log(form.getFieldsValue());
     }
@@ -14,18 +17,23 @@ export function ContactMe() {
     const sendEmail = (e: FormEvent) => {
         e.preventDefault();
 
-        if (form.current) {
-            emailjs
-                .sendForm(`${import.meta.env.VITE_SERVICE_ID}`, `${import.meta.env.VITE_TEMPLATE_ID}`, form.current, `${import.meta.env.VITE_PUBLIC_ID}`)
-                .then(
-                    () => {
-                        console.log('SUCCESS!');
-                    },
-                    (error) => {
-                        console.log('FAILED...', error.text);
-                    },
-                );
+
+        const data = {
+            ...form.getFieldsValue()
+            // , user_id: `${import.meta.env.VITE_PUBLIC_ID}` 
         }
+        console.log(data);
+        emailjs
+            .send(`${import.meta.env.VITE_SERVICE_ID}`, `${import.meta.env.VITE_TEMPLATE_ID}`, data, `${import.meta.env.VITE_PUBLIC_ID}`)
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+
     };
 
     return (
@@ -34,20 +42,38 @@ export function ContactMe() {
             <Form
                 name="contact-me"
                 layout="vertical"
-                onSubmitCapture={sendEmail}>
+                form={form}>
+                <Form.Item
+                    label="Name"
+                    name="user_name"
+                    rules={[{ required: true, message: 'Please input your name!' }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item
+                    label="Company"
+                    name="user_company"
+                    rules={[{ required: true, message: 'Please input your company name!' }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item
+                    label="Email"
+                    name="user_email"
+                    rules={[{ required: true, message: 'Please input your email!' }]}>
+                    <Input />
+                </Form.Item>
+                <Form.Item
+                    label="Message"
+                    name="message"
+                    rules={[{ required: true, message: 'Please input your message!' }]}>
+                    <TextArea />
+                </Form.Item>
+                <Form.Item>
+                    <Button type="primary" htmlType="submit" onClick={sendEmail}>
+                        Submit
+                    </Button>
+                </Form.Item>
 
             </Form>
-            {/* <form ref={form} onSubmit={sendEmail}>
-                <label>Name</label>
-                <input type="text" name="user_name" />
-                <label>Company</label>
-                <input type="text" name="user_company" />
-                <label>Email</label>
-                <input type="email" name="user_email" />
-                <label>Message</label>
-                <textarea name="message" />
-                <input type="submit" value="Send" />
-            </form> */}
         </section>
     );
 };
