@@ -6,6 +6,11 @@ export function ContactMe() {
     // const form = useRef<HTMLFormElement>(null);
     const [form] = Form.useForm();
 
+    const temporarySubmit = (e:FormEvent)=>{
+        e.preventDefault();
+        console.log(form.getFieldsValue());
+    }
+
     const sendEmail = (e: FormEvent) => {
         e.preventDefault();
 

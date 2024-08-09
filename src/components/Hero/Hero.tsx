@@ -6,7 +6,7 @@ import { LinkedinFilled, GithubFilled } from "@ant-design/icons"
 export function Hero() {
     const handleDownload = () => {
         const link = document.createElement('a');
-        link.href = '/duckHunting.png';
+        link.href = '/CV-SergioCamiloGarzon.pdf';
         document.body.appendChild(link);
         link.target ="_blank";
         link.click();

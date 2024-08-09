@@ -165,6 +165,7 @@
 .screenSlide a {
   color: var(--onyx);
   width: 20px;
+  cursor:pointer;
 
 }
 
@@ -175,6 +176,7 @@
   font-weight: 900;
   padding: 1.2rem;
   text-decoration: underline;
+  cursor:pointer;
   
 }
 .screenSlide a:hover {
